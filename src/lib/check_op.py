@@ -64,6 +64,7 @@ class Check(Base):
             messages = self._call_api(self.channel_type + ".history",
                                       channel=self.channel_id,
                                       count=max_api_count,
+                                      inclusive=True,
                                       oldest=oldest)
             limit -= 1
             has_more = messages.get("has_more")
