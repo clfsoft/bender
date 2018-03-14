@@ -63,6 +63,7 @@ class Check(Base):
         while has_more and limit >= 0:
             messages = self._call_api(self.channel_type + ".history",
                                       channel=self.channel_id,
+                                      inclusive=True,
                                       count=max_api_count,
                                       oldest=oldest)
             limit -= 1
